@@ -209,16 +209,16 @@ stages:
           name: Update Existing Supervisor Namespace
           version: '1.0'
           properties:
-            host: sc2vc05.cmbu.local
-            user: administrator@vsphere.local
+            host: <Enter vCenter URL>
+            user: <ENTER vCenter Admin Username Ex. administrator@vsphere.local>
             vcpass: ${var.vcf_password}
-            clustername: wld01-clu01
+            clustername: <Enter Supervisor Cluster Name>
             namespacename: ${input.super_ns}
             nsrole: EDIT
             subjecttype: GROUP
-            nsuser: Administrator
-            nsdomain: vsphere.local
-            storagepolicy: Management Storage policy - Thin
+            nsuser: <Enter vCenter Admin Ex. Administrator>
+            nsdomain: <Enter vCenter Admin User Domain ex. vsphere.local>
+            storagepolicy: <Enter Storage Policy Name>
             storagelimit: '0'
       Create Supervisor Namespace from Blueprint:
         type: Blueprint
