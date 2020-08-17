@@ -1,0 +1,94 @@
+layout:
+  pages:
+    - id: page_general
+      sections:
+        - id: section_deploymentName
+          fields:
+            - id: deploymentName
+              display: textField
+              state:
+                visible: true
+                read-only: false
+        - id: section_project
+          fields:
+            - id: project
+              display: dropDown
+              state:
+                visible: true
+                read-only: false
+        - id: section_super_ns
+          fields:
+            - id: super_ns
+              display: textField
+              state:
+                visible: false
+                read-only: false
+        - id: section_add_to_cs
+          fields:
+            - id: add_to_cs
+              display: dropDown
+              state:
+                visible: true
+                read-only: false
+        - id: section_k8s_cluster_name
+          fields:
+            - id: k8s_cluster_name
+              display: textField
+              state:
+                visible: true
+                read-only: false
+      title: General
+      state: {}
+schema:
+  deploymentName:
+    label: Enter Supervisor Namespace Name
+    description: Deployment Name
+    type:
+      dataType: string
+      isMultiple: false
+    constraints:
+      required: true
+      max-value: 80
+  project:
+    label: Project
+    description: Project
+    type:
+      dataType: string
+      isMultiple: false
+    valueList:
+      id: projects
+      type: scriptAction
+    constraints:
+      required: true
+  super_ns:
+    label: Enter Supervisor Namespace Name
+    description: Enter Supervisor Namespace Name
+    signpost: Enter Supervisor Namespace Name
+    type:
+      dataType: string
+      isMultiple: false
+    default:
+      bind: deploymentName
+  add_to_cs:
+    label: Add K8s Cluster to Code Stream as Endpoint
+    description: Add as Code Stream Endpoint (YES or NO)
+    signpost: Add as Code Stream Endpoint (YES or NO)
+    type:
+      dataType: string
+      isMultiple: false
+    default: 'YES'
+    valueList:
+      - value: 'YES'
+        label: 'Yes'
+      - value: 'NO'
+        label: 'No'
+  k8s_cluster_name:
+    label: Enter K8s Cluster Name
+    description: Enter Name for Tanzu K8s Cluster
+    signpost: Enter Name for Tanzu K8s Cluster
+    type:
+      dataType: string
+      isMultiple: false
+    default: ''
+options:
+  externalValidations: []
