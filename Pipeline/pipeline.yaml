@@ -1,5 +1,5 @@
 ---
-project: Production
+project: <ENTER PROJECT NAME>
 kind: PIPELINE
 name: Deploy vSphere K8s Cluster in Namespace
 icon: organization,left, is-info is-solid
@@ -49,7 +49,7 @@ stages:
           - '#!/usr/bin/expect -f'
           - set timeout -1
           - spawn kubectl vsphere login --server 10.176.193.1 --insecure-skip-tls-verify --vsphere-username
-            mcclanahanc@cmbu.local
+            ${var.my-vcf-username}
           - match_max 100000
           - expect -exact "\r
           - 'Password: "'
@@ -272,7 +272,7 @@ stages:
           - '#!/usr/bin/expect -f'
           - set timeout -1
           - spawn kubectl vsphere login --server 10.176.193.1 --insecure-skip-tls-verify --vsphere-username
-            mcclanahanc@cmbu.local --tanzu-kubernetes-cluster-name ${input.k8s_cluster_name} --tanzu-kubernetes-cluster-namespace
+            ${var.my-vcf-password} --tanzu-kubernetes-cluster-name ${input.k8s_cluster_name} --tanzu-kubernetes-cluster-namespace
             ${input.super_ns}
           - match_max 100000
           - expect -exact "\r
