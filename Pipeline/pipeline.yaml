@@ -151,7 +151,7 @@ stages:
             Authorization: Bearer ${Integration-to-vRA.Get API Access Token.output.responseBody.access_token}
           payload: |-
             {
-              "project": "Production",
+              "project": <ENTER PROJECT NAME>,
               "kind": "ENDPOINT",
               "name": "${input.k8s_cluster_name}",
               "description": "Cluster Created From Pipeline",
