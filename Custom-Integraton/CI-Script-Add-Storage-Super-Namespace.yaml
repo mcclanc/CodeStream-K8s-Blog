@@ -96,7 +96,7 @@ inputProperties:      # Enter fields for input section of a task
   - name: 'host'
     type: text
     title: vCenter Host
-    defaultValue: 'sc2vc05.cmbu.local'
+    defaultValue: 'vCenter URL'
     bindable: true
 
   - name: 'user'
@@ -113,7 +113,7 @@ inputProperties:      # Enter fields for input section of a task
   - name: "clustername"
     type: text
     title: Supervisor Cluster Name
-    defaultValue: 'wld01-clu01'
+    defaultValue: 'Supervisor Cluster'
     bindable: true
 
   - name: 'namespacename'
